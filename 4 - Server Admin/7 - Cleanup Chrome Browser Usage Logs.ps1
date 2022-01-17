@@ -1,0 +1,1 @@
+﻿Get-ChildItem –Path  "$env:LOCALAPPDATA\Google\ChromeReporting" –Recurse -include *.json, *.txt | Where-Object { $_.CreationTime –lt (Get-Date).AddDays(-90) } | Remove-Item
